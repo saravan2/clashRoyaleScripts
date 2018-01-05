@@ -51,7 +51,9 @@ async def getClanStats():
         if (winsPercent < minPvPWinsPercent):
             minPvPWinsPercent = winsPercent
             minPvPWinsPercentMember = member
+        print("{} {} Trophies {} Clan Rank {} Role {} ClanChestCrowns {} Donations {} Received {} Delta {}".format(member.name, member.tag, member.trophies, member.rank, member.role, member.clanChestCrowns, member.donations, member.donationsReceived, member.donationsDelta), file=today)
 
+    print("****************************", file=today)
     print("maxClanChestCrowns {} {} {}".format(maxClanChestCrownsMember.name, maxClanChestCrownsMember.tag, maxClanChestCrowns), file=today)
     print("maxWinsPercent {} {} {}".format(maxPvPWinsPercentMember.name, maxPvPWinsPercentMember.tag, (maxPvPWinsPercent/10)), file=today)
     print("minWinsPercent {} {} {}".format(minPvPWinsPercentMember.name, minPvPWinsPercentMember.tag, (minPvPWinsPercent/10)), file=today)

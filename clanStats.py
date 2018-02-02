@@ -28,9 +28,10 @@ async def getClanStats():
     minDonationsDeltaMember = None
     minDonationsDelta = math.inf
     for member in clan.members:
-        if (int(member.clanChestCrowns) > maxClanChestCrowns):
-            maxClanChestCrowns = int(member.clanChestCrowns) 
-            maxClanChestCrownsMember = member
+        if member.clanChestCrowns is not None:
+            if (int(member.clanChestCrowns) > maxClanChestCrowns):
+                maxClanChestCrowns = int(member.clanChestCrowns) 
+                maxClanChestCrownsMember = member
         if (int(math.fsum([float(member.donationsPercent)] * 100)) > maxDonationsPercent):
             maxDonationsPercent = int(math.fsum([float(member.donationsPercent)] * 100))
             maxDonationsPercentMember = member
